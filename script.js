@@ -26,8 +26,10 @@ var upperCaseOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ";
 var lowerCaseOnly = "abcdefghijklmnopqrstuvwxyz";
 var numbersOnly = "0123456789";
 var specialsOnly = "~!@#$%^&*+-.,{}[]();:";
+var upperLowerOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+var upperNumbersOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ0123456789"
 
-// Combination loops (upperCase ONLY)
+// Combination loops (UPPERCASE ONLY)
 if(upperCase === true && lowerCase === false && numbers === false && specials === false) {
   for(var i = 0; i < characters; i++ ) {
     var random = Math.floor(Math.random() * upperCaseOnly.length);
@@ -35,7 +37,7 @@ if(upperCase === true && lowerCase === false && numbers === false && specials ==
   }
 }
 
-// Combination loops (lowerCase ONLY)
+// Combination loops (LOWERCASE ONLY)
 else if (upperCase === false && lowerCase === true && numbers === false && specials === false) {
   for(var i = 0; i < characters; i++ ) {
     var random = Math.floor(Math.random() * lowerCaseOnly.length);
@@ -43,7 +45,7 @@ else if (upperCase === false && lowerCase === true && numbers === false && speci
   }
 }
 
-//Combination loops (numbers ONLY)
+//Combination loops (NUMBERS ONLY)
 else if (upperCase === false && lowerCase === false && numbers === true && specials === false) {
   for(var i = 0; i < characters; i++ ) {
     var random = Math.floor(Math.random() * numbersOnly.length);
@@ -51,13 +53,30 @@ else if (upperCase === false && lowerCase === false && numbers === true && speci
   }
 }
 
-//Combination loops (specials ONLY)
+//Combination loops (SPECIALS ONLY)
 else if (upperCase === false && lowerCase === false && numbers === false && specials === true) {
   for(var i = 0; i < characters; i++ ) {
     var random = Math.floor(Math.random() * specialsOnly.length);
     password += specialsOnly.substring(random, random + 1);
   }
 }
+
+//Combination loops (UPPER/LOWER ONLY)
+else if (upperCase === true && lowerCase === true && numbers === false && specials === false) {
+  for(var i = 0; i < characters; i++ ) {
+    var random = Math.floor(Math.random() * upperLowerOnly.length);
+    password += upperLowerOnly.substring(random, random + 1);
+  }
+}
+
+//Combination loops (UPPER/NUMBER ONLY)
+else if (upperCase === true && lowerCase === false && numbers === true && specials === false) {
+  for(var i = 0; i < characters; i++ ) {
+    var random = Math.floor(Math.random() * upperNumbersOnly.length);
+    password += upperNumbersOnly.substring(random, random + 1);
+  }
+}
+
 
 return password;
 
