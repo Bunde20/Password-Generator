@@ -8,7 +8,7 @@ function generatePassword() {
 // Defined password variable
 var password = "";
 
-// Set password length prompts
+// Set password length prompt and alert
 var characters = prompt("How many characters would you like your password to be?");
 if (characters < 8 || characters > 128) {
   alert("Your password must be between 8 and 128 characters to be valid. Please try again!");
@@ -16,10 +16,10 @@ if (characters < 8 || characters > 128) {
 }
 
 // Set character selection prompts
-var upperCase = confirm("Click OK to include uppercase characters, or cancel to exclude them.");
-var lowerCase = confirm("Click OK to include lowercase characters, or cancel to exclude them.");
-var numbers = confirm("Click OK to include numbers, or cancel to exclude them.");
-var specials = confirm("Click OK to include special characters, or cancel to exclude them.");
+var upperCase = confirm("Include UPPERCASE letters? OK = YES or Cancel = NO");
+var lowerCase = confirm("Include LOWERCASE letters? OK = YES or Cancel = NO");
+var numbers = confirm("Include NUMBERS? OK = YES or Cancel = NO");
+var specials = confirm("Include SPECIAL CHARACTERS? OK = YES or Cancel = NO");
 
 // Set possbile character options
 var upperCaseOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ";
