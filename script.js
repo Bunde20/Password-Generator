@@ -16,23 +16,27 @@ if (characters < 8 || characters > 128) {
 }
 
 // Set character selection prompts
-var upperCase = confirm("Click YES to include uppercase characters.");
-var lowerCase = confirm("Click YES to include lowercase characters.");
-var numbers = confirm("Click YES to include numbers.");
-var specials = confirm("Click YES to include special characters.");
+var upperCase = confirm("Click OK to include uppercase characters, or cancel to exclude them.");
+var lowerCase = confirm("Click OK to include lowercase characters, or cancel to exclude them.");
+var numbers = confirm("Click OK to include numbers, or cancel to exclude them.");
+var specials = confirm("Click OK to include special characters, or cancel to exclude them.");
 
 // Set possbile character options
-upperCase = "ABCDEFGHIGKLMNOPQRSTUVWXYZ";
-lowerCase = "abcdefghijklmnopqrstuvwxyz";
-numbers = "0123456789";
-specials = "~!@#$%^&*+-.,{}[]();:";
+var upperCaseOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ";
+var lowerCaseOnly = "abcdefghijklmnopqrstuvwxyz";
+var numbersOnly = "0123456789";
+var specialsOnly = "~!@#$%^&*+-.,{}[]();:";
 
 // Possible combination options (upperCase ONLY)
-if(upperCase === true && upperCase === false && numbers === false && specials === false) {
+if(upperCase === true && lowerCase === false && numbers === false && specials === false) {
   for(var i = 0; i < characters; i++ ) {
-    var random = Math.floor(Math.random() * upperCase.length);
-    password += upperCase.substring(random, random + 1);
+    var random = Math.floor(Math.random() * upperCaseOnly.length);
+    password += upperCaseOnly.substring(random, random + 1);
   }
+}
+
+return password;
+
 }
 
 // Write password to the #password input
@@ -42,9 +46,6 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
-
-return password;
 }
 
 // Add event listener to generate button
