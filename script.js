@@ -28,6 +28,7 @@ var numbersOnly = "0123456789";
 var specialsOnly = "~!@#$%^&*+-.,{}[]();:";
 var upperLowerOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 var upperNumbersOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ0123456789"
+var upperSpecialsOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ~!@#$%^&*+-.,{}[]();:"
 
 // Combination loops (UPPERCASE ONLY)
 if(upperCase === true && lowerCase === false && numbers === false && specials === false) {
@@ -74,6 +75,14 @@ else if (upperCase === true && lowerCase === false && numbers === true && specia
   for(var i = 0; i < characters; i++ ) {
     var random = Math.floor(Math.random() * upperNumbersOnly.length);
     password += upperNumbersOnly.substring(random, random + 1);
+  }
+}
+
+//Combination loops (UPPER/SPECIALS ONLY)
+else if (upperCase === true && lowerCase === false && numbers === false && specials === true) {
+  for(var i = 0; i < characters; i++ ) {
+    var random = Math.floor(Math.random() * upperSpecialsOnly.length);
+    password += upperSpecialsOnly.substring(random, random + 1);
   }
 }
 
