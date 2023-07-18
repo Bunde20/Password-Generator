@@ -3,6 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Generate password function
 function generatePassword() {
+  console.log("Button clicked!");
 
 // Defined password variable
 var password = "";
@@ -20,7 +21,11 @@ var lowerCase = confirm("Click YES to include lowercase characters.");
 var numbers = confirm("Click YES to include numbers.");
 var specials = confirm("Click YES to include special characters.");
 
-
+// Set possbile character options
+upperCase = "ABCDEFGHIGKLMNOPQRSTUVWXYZ";
+lowerCase = "abcdefghijklmnopqrstuvwxyz";
+numbers = "0123456789";
+specials = "~!@#$%^&*+-.,{}[]();:";
 
 
 // Write password to the #password input
@@ -32,7 +37,9 @@ function writePassword() {
 
 }
 
+return password;
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
