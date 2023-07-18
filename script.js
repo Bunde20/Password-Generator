@@ -27,11 +27,19 @@ var lowerCaseOnly = "abcdefghijklmnopqrstuvwxyz";
 var numbersOnly = "0123456789";
 var specialsOnly = "~!@#$%^&*+-.,{}[]();:";
 
-// Possible combination options (upperCase ONLY)
+// Combination loops (upperCase ONLY)
 if(upperCase === true && lowerCase === false && numbers === false && specials === false) {
   for(var i = 0; i < characters; i++ ) {
     var random = Math.floor(Math.random() * upperCaseOnly.length);
     password += upperCaseOnly.substring(random, random + 1);
+  }
+}
+
+// Combination loops (lowerCase ONLY)
+else if (upperCase === false && lowerCase === true && numbers === false && specials === false) {
+  for(var i = 0; i < characters; i++ ) {
+    var random = Math.floor(Math.random() * lowerCaseOnly.length);
+    password += lowerCaseOnly.substring(random, random + 1);
   }
 }
 
