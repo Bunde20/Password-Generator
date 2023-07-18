@@ -51,6 +51,14 @@ else if (upperCase === false && lowerCase === false && numbers === true && speci
   }
 }
 
+//Combination loops (specials ONLY)
+else if (upperCase === false && lowerCase === false && numbers === false && specials === true) {
+  for(var i = 0; i < characters; i++ ) {
+    var random = Math.floor(Math.random() * specialsOnly.length);
+    password += specialsOnly.substring(random, random + 1);
+  }
+}
+
 return password;
 
 }
