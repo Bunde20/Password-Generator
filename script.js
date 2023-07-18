@@ -27,6 +27,13 @@ lowerCase = "abcdefghijklmnopqrstuvwxyz";
 numbers = "0123456789";
 specials = "~!@#$%^&*+-.,{}[]();:";
 
+// Possible combination options (upperCase ONLY)
+if(upperCase === true && upperCase === false && numbers === false && specials === false) {
+  for(var i = 0; i < characters; i++ ) {
+    var random = Math.floor(Math.random() * upperCase.length);
+    password += upperCase.substring(random, random + 1);
+  }
+}
 
 // Write password to the #password input
 function writePassword() {
