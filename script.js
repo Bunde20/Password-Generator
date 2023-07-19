@@ -15,24 +15,14 @@ function generatePassword() {
     generatePassword();
   }
 
-  // Set character selection prompts
-  // var upperCase = confirm("Include UPPERCASE letters? OK = YES or Cancel = NO");
-  // var lowerCase = confirm("Include LOWERCASE letters? OK = YES or Cancel = NO");
-  // var numbers = confirm("Include NUMBERS? OK = YES or Cancel = NO");
-  // var specials = confirm("Include SPECIAL CHARACTERS? OK = YES or Cancel = NO");
-
-  // Set possbile character options
+  // Set variables for possbile character options & split method set to return a string
   var upperCaseOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ".split("");
   var lowerCaseOnly = "abcdefghijklmnopqrstuvwxyz".split("");
   var numbersOnly = "0123456789".split("");
   var specialsOnly = "~!@#$%^&*+-.,{}[]();:".split("");
-  // var upperLowerOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-  // var upperNumbersOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ0123456789"
-  // var upperSpecialsOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZ~!@#$%^&*+-.,{}[]();:"
-  // var upperLowerNumbersOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-  // var upperLowerNumbersSpecialsOnly = "ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*+-.,{}[]();:"
-
   var prePassword = [];
+
+  // Create response messages for input from user
   if (confirm("Include UPPERCASE letters? OK = YES or Cancel = NO")) {
     prePassword = prePassword.concat(upperCaseOnly)
   }
@@ -49,88 +39,16 @@ function generatePassword() {
     alert("You must choose at least one type of character to create a password. Please try again!")
     return;
   } else {
+
+  // Set a for loop to create random password from responses
     for (var i = 0; i < characters; i++) {
       var random = Math.floor(Math.random() * prePassword.length);
       password += prePassword[random];
     }
   }
+
+  // Print responses from information above to ensure input is correct
   console.log(prePassword)
-
-
-
-
-  // Combination loops (UPPERCASE ONLY)
-  // if(upperCase === true && lowerCase === false && numbers === false && specials === false) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * upperCaseOnly.length);
-  //     password += upperCaseOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // // Combination loops (LOWERCASE ONLY)
-  // else if (upperCase === false && lowerCase === true && numbers === false && specials === false) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * lowerCaseOnly.length);
-  //     password += lowerCaseOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // //Combination loops (NUMBERS ONLY)
-  // else if (upperCase === false && lowerCase === false && numbers === true && specials === false) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * numbersOnly.length);
-  //     password += numbersOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // //Combination loops (SPECIALS ONLY)
-  // else if (upperCase === false && lowerCase === false && numbers === false && specials === true) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * specialsOnly.length);
-  //     password += specialsOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // //Combination loops (UPPER/LOWER ONLY)
-  // else if (upperCase === true && lowerCase === true && numbers === false && specials === false) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * upperLowerOnly.length);
-  //     password += upperLowerOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // //Combination loops (UPPER/NUMBER ONLY)
-  // else if (upperCase === true && lowerCase === false && numbers === true && specials === false) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * upperNumbersOnly.length);
-  //     password += upperNumbersOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // //Combination loops (UPPER/SPECIALS ONLY)
-  // else if (upperCase === true && lowerCase === false && numbers === false && specials === true) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * upperSpecialsOnly.length);
-  //     password += upperSpecialsOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // //Combination loops (UPPER/LOWER/NUMBERS ONLY)
-  // else if (upperCase === true && lowerCase === true && numbers === true && specials === false) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * upperLowerNumbersOnly.length);
-  //     password += upperLowerNumbersOnly.substring(random, random + 1);
-  //   }
-  // }
-
-  // //Combination loops (UPPER/LOWER/NUMBERS/SPECIALS ONLY)
-  // else if (upperCase === true && lowerCase === true && numbers === true && specials === true) {
-  //   for(var i = 0; i < characters; i++ ) {
-  //     var random = Math.floor(Math.random() * upperLowerNumbersSpecialsOnly.length);
-  //     password += upperLowerNumbersSpecialsOnly.substring(random, random + 1);
-  //   }
-  // }
-
 
   return password;
 
