@@ -38,6 +38,7 @@ function generatePassword() {
   if (prePassword.length === 0) {
     alert("You must choose at least one type of character to create a password. Please try again!")
     return;
+
   } else {
 
   // Set a for loop to create random password from responses
@@ -59,7 +60,12 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  if (!password) {
+    passwordText.value = "Please select at least one option!";
+  }
+  else {
   passwordText.value = password;
+  }
 
 }
 
